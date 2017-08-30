@@ -9,6 +9,7 @@
 
   <div class="controls">
     <label for="spacing">Spacing:</label>
+    <!-- note custom data attribute -->
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
     <label for="blur">Blur:</label>
@@ -22,6 +23,7 @@
 
   <style>
     :root {
+      /*vanilla css variable syntax*/
       --base: #ffc600;
       --spacing: 10px;
       --blur: 10px;
@@ -62,6 +64,7 @@
   <script>
     const inputs = document.querySelectorAll('.controls input');
 
+    // 'name' and 'value' are input attributes
     function handleUpdate() {
       const suffix = this.dataset.sizing || '';
       document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
