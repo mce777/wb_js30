@@ -8,6 +8,8 @@
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
 const canvas = document.querySelector('#draw');
+
+// gotta have a context, not just canvas
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -15,6 +17,7 @@ ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = 100;
+// hey look below, blend modes!
 // ctx.globalCompositeOperation = 'multiply';
 
 let isDrawing = false;
@@ -33,9 +36,12 @@ function draw(e) {
   // go to
   ctx.lineTo(e.offsetX, e.offsetY);
   ctx.stroke();
-  [lastX, lastY] = [e.offsetX, e.offsetY];
+  // [lastX, lastY] = [e.offsetX, e.offsetY];
+  lastX = e.offsetX;
+  lastY = e.offsetY;
 
   hue++;
+  // a little cleaner if we add this
   if (hue >= 360) {
     hue = 0;
   }
