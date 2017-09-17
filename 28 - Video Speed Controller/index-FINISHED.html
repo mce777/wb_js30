@@ -21,7 +21,7 @@
   const video = document.querySelector('.flex');
 
   function handleMove(e) {
-      const y = e.pageY - this.offsetTop;
+      const y = e.pageY - this.offsetTop; // cuz you don't know exactly where it'll be on the page
       const percent = y / this.offsetHeight;
       const min = 0.4;
       const max = 4;
