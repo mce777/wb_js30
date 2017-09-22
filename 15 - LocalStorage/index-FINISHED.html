@@ -31,7 +31,9 @@
   const items = JSON.parse(localStorage.getItem('items')) || [];
 
   function addItem(e) {
+    // stop the page from reloading
     e.preventDefault();
+    //here we can use 'this' because the fn is applied to the form
     const text = (this.querySelector('[name=item]')).value;
     const item = {
       text,
@@ -41,7 +43,8 @@
     items.push(item);
     populateList(items, itemsList);
     localStorage.setItem('items', JSON.stringify(items));
-    this.reset();
+
+    this.reset(); // resetting form
   }
 
   function populateList(plates = [], platesList) {
@@ -52,7 +55,7 @@
           <label for="item${i}">${plate.text}</label>
         </li>
       `;
-    }).join('');
+    }).join(''); // 'join' used here to return one long string instead of an array
   }
 
   function toggleDone(e) {
@@ -74,4 +77,3 @@
 
 </body>
 </html>
-
