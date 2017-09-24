@@ -38,6 +38,7 @@
   msg.text = document.querySelector('[name="text"]').value;
 
   function populateVoices() {
+    // getVoices comes with the box, so to speak
     voices = this.getVoices();
     voicesDropdown.innerHTML = voices
       .filter(voice => voice.lang.includes('en'))
@@ -67,6 +68,7 @@
   voicesDropdown.addEventListener('change', setVoice);
   options.forEach(option => option.addEventListener('change', setOption));
   speakButton.addEventListener('click', toggle);
+  // see the arrow fn? Otherwise fn would run on pageload and that wouldn't work
   stopButton.addEventListener('click', () => toggle(false));
 
 </script>

@@ -39,18 +39,21 @@
 
 <button></button>
 <script>
+  // 'bubbling' means if you click an inner div, it'll bubble outwards
+  // through the surrounding divs, to the body tag etc...
   const divs = document.querySelectorAll('div');
   const button = document.querySelector('button');
 
   function logText(e) {
     console.log(this.classList.value);
-    // e.stopPropagation(); // stop bubbling!
+    // e.stopPropagation(); // STOP bubbling! Won't bubble up when you have fn.
     // console.log(this);
   }
 
   divs.forEach(div => div.addEventListener('click', logText, {
+    // note this options object that you normally don't use
     capture: false,
-    once: true
+    once: true // an easier way to remove eventlistener
   }));
 
   button.addEventListener('click', () => {
