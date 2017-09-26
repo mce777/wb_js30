@@ -6,6 +6,7 @@
 </head>
 <body>
   <h2>Cool</h2>
+  <!-- this is the white bg that will follow along -->
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -214,7 +215,7 @@
 </style>
 
 <script>
-  const triggers = document.querySelectorAll('.cool > li');
+  const triggers = document.querySelectorAll('.cool > li'); // all direct decendents
   const background  = document.querySelector('.dropdownBackground');
   const nav  = document.querySelector('.top');
 
@@ -230,6 +231,7 @@
     const coords = {
       height: dropdownCoords.height,
       width: dropdownCoords.width,
+      // make note of this offsetting
       top: dropdownCoords.top - navCoords.top,
       left: dropdownCoords.left - navCoords.left
     };
