@@ -38,7 +38,7 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventor first and last names
-    // returns a NEW array of the SAME LENGTH
+    // returns !!NEW!! array of the SAME LENGTH
     const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
     console.log(fullNames);
 
@@ -53,17 +53,19 @@
     // });
 
     // 1 bumps them up in the array, -1 bumps them down
+    // a and b compared, 1 moves a forward, -1 b forward
     const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
     console.table(ordered);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-    // kind of like your 'running total'
+    // 'total' is your 'running total'
+    // 0 at the end is your starting value
     const totalYears = inventors.reduce((total, inventor) => {
       return total + (inventor.passed - inventor.year);
     }, 0);
 
-    console.log(totalYears);
+    console.log(totalYears); // one value
 
     // 5. Sort the inventors by years lived
     const oldest = inventors.sort(function(a, b) {
@@ -78,7 +80,7 @@
 
     const category = document.querySelector('.mw-category');
     // const links = [...category.querySelectorAll('a')];
-    const links = Array.from(category.querySelectorAll('a'));
+    const links = Array.from(category.querySelectorAll('a')); // cuz the above was a nodelist and not array
     const de = links
                 .map(link => link.textContent)
                 .filter(streetName => streetName.includes('de'));
