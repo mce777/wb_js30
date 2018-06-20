@@ -42,7 +42,8 @@
       font-size: 20px;
       background-size:cover;
       background-position:center;
-      /*flex 1 means distribute the extra space amongst yourselves, children*/
+
+      /* flex: 1 means distribute the extra space amongst yourselves, children */
       flex: 1;
       justify-content: center;
       display: flex;
@@ -62,6 +63,7 @@
       width: 100%;
       transition:transform 0.5s;
       flex: 1 0 auto;
+
       /*a flex item can also be a flex container*/
       display:flex;
       justify-content: center;
@@ -83,7 +85,8 @@
       font-size: 4em;
     }
 
-    .panel.open {
+    /* fyi this is a css group */
+    .panel.open{
       flex: 5;
       font-size:40px;
     }
@@ -120,10 +123,10 @@
   </div>
 
   <script>
+    // this will get you a nodeList
     const panels = document.querySelectorAll('.panel');
 
     function toggleOpen() {
-      console.log('Hello');
       this.classList.toggle('open');
     }
 
