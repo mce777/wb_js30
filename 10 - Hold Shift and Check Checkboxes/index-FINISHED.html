@@ -110,6 +110,8 @@ function handleCheck(e) {
     // loop over every single checkbox
     checkboxes.forEach(checkbox => {
       console.log(checkbox);
+      // note how inBetween is initially set to false a few lines up
+      // if checkbox is start/end OR inbetween start/end, it gets checked
       if (checkbox === this || checkbox === lastChecked) {
         inBetween = !inBetween;
         console.log('Starting to check them inbetween!');
