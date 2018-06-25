@@ -1,6 +1,6 @@
 /* Get Our Elements */
-const player = document.querySelector('.player');
-const video = player.querySelector('.viewer');
+const player = document.querySelector('.player'); // the surrounding div
+const video = player.querySelector('.viewer'); // see how not the whole document?
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
@@ -16,13 +16,12 @@ function togglePlay() {
 
 function updateButton() {
   const icon = this.paused ? '►' : '❚ ❚';
-  console.log(icon);
   toggle.textContent = icon;
 }
 
 function skip() {
   // parseFloat will turn the string into a number
- video.currentTime += parseFloat(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 function handleRangeUpdate() {
