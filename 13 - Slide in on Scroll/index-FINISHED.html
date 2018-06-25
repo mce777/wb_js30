@@ -79,6 +79,8 @@
       });
     }
 
+    // here we throttle the checkslide using debounce
+    // basically anytime you're listening for scrolling, debouncing is worth consideration
     window.addEventListener('scroll', debounce(checkSlide));
 
   </script>
