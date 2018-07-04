@@ -8,6 +8,7 @@
 
   <script>
     // start with strings, numbers and booleans
+    // basically a copy being made here
     // let age = 100;
     // let age2 = age;
     // console.log(age, age2); // 100, 100
@@ -62,7 +63,7 @@
       age: 80
     };
 
-    // and think we make a copy, but this is just a reference!!
+    // we think we make a copy, but this is just a reference! No good.
     // const captain = person;
     // captain.number = 99;
 
@@ -75,7 +76,7 @@
     // but hold up, it's not available yet!!!
     // const cap3 = {...person};
 
-    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    // WAIT, HOLD ON - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 
     const wes = {
       name: 'Wes',
@@ -91,7 +92,8 @@
 
     const dev = Object.assign({}, wes);
 
-    // this is not the coolest, cuz you're stringifying then converting it back
+    // not the coolest, cuz you're 1) stringifying then 2) converting it back
+    // might be a performance hit
     const dev2 = JSON.parse(JSON.stringify(wes));
 
 

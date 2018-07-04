@@ -44,7 +44,7 @@
     populateList(items, itemsList);
     localStorage.setItem('items', JSON.stringify(items));
 
-    this.reset(); // resetting form
+    this.reset(); // reset form
   }
 
   function populateList(plates = [], platesList) {
@@ -55,7 +55,7 @@
           <label for="item${i}">${plate.text}</label>
         </li>
       `;
-    }).join(''); // 'join' used here to return one long string instead of an array
+    }).join(''); // 'join' used here to return one long string of html, not an array
   }
 
   function toggleDone(e) {
@@ -67,6 +67,7 @@
     populateList(items, itemsList);
   }
 
+  // submit would be both enter on keyboard, and click on submit btn
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
 
