@@ -54,6 +54,7 @@
 
     }
 
+    /*styled input start*/
     .plates input {
       display: none;
     }
@@ -66,6 +67,7 @@
     .plates input:checked + label:before {
       content: '🌮';
     }
+    /*styled input end*/
 
     .add-items {
       margin-top: 20px;
