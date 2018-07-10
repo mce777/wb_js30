@@ -195,8 +195,8 @@
     .reduce((total, vidSeconds) => total + vidSeconds);
 
     let secondsLeft = seconds;
-    const hours = Math.floor(secondsLeft / 3600);
-    secondsLeft = secondsLeft % 3600;
+    const hours = Math.floor(secondsLeft / 3600); // 3600 = seconds in hour
+    secondsLeft = secondsLeft % 3600; // how many left after being evenly devided
 
     const mins = Math.floor(secondsLeft / 60);
     secondsLeft = secondsLeft % 60;
