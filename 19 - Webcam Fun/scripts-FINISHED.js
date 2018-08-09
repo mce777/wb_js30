@@ -5,7 +5,9 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
 function getVideo() {
+  // this is how you grab the video
   navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+  // returns a promise...
     .then(localMediaStream => {
       console.log(localMediaStream);
       video.src = window.URL.createObjectURL(localMediaStream);
@@ -23,6 +25,7 @@ function paintToCanvas() {
   canvas.height = height;
 
   return setInterval(() => {
+    // 0,0 is upper left of canvas
     ctx.drawImage(video, 0, 0, width, height);
     // take the pixels out
     let pixels = ctx.getImageData(0, 0, width, height);
@@ -49,7 +52,7 @@ function takePhoto() {
   link.href = data;
   link.setAttribute('download', 'handsome');
   link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
-  strip.insertBefore(link, strip.firsChild);
+  strip.insertBefore(link, strip.firstChild);
 }
 
 function redEffect(pixels) {
