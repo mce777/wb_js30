@@ -32,11 +32,13 @@
   document.body.appendChild(highlight);
 
   function highlightLink() {
+    // getBoundingClientRect. Say that 5 times fast :)
     const linkCoords = this.getBoundingClientRect();
     console.log(linkCoords);
     const coords = {
       width: linkCoords.width,
       height: linkCoords.height,
+        // see the simple math we're doing below? That's why we need a seperate coords variable
       top: linkCoords.top + window.scrollY,
       left: linkCoords.left + window.scrollX
     };
