@@ -51,6 +51,7 @@
     toggle();
   }
 
+  // FYI speechSynthesis is a global variable
   function toggle(startOver = true) {
     speechSynthesis.cancel();
     if (startOver) {
