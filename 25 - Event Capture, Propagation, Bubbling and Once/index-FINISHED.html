@@ -39,21 +39,23 @@
 
 <button></button>
 <script>
+  // 'capturing' is done on the way down
   // 'bubbling' means if you click an inner div, it'll bubble outwards
   // through the surrounding divs, to the body tag etc...
   const divs = document.querySelectorAll('div');
   const button = document.querySelector('button');
 
-  function logText(e) {
+  // a click on the inner square will bubble out to the outer squares/divs
+  function logText(event) {
     console.log(this.classList.value);
-    // e.stopPropagation(); // STOP bubbling! Won't bubble up when you have fn.
+    // event.stopPropagation(); // i.e. STOP bubbling this event up
     // console.log(this);
   }
 
   divs.forEach(div => div.addEventListener('click', logText, {
     // note this options object that you normally don't use
     capture: false,
-    once: true // an easier way to remove eventlistener
+    once: true // unbinds itself. Easier way to remove eventlistener
   }));
 
   button.addEventListener('click', () => {

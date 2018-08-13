@@ -44,13 +44,14 @@
   </div>
 
   <script>
-    // Not a ton of code, but hard to
     const nav = document.querySelector('#main');
-    let topOfNav = nav.offsetTop; // how much nav is offset from the top of page
+    let topOfNav = nav.offsetTop;
 
     function fixNav() {
+      // ScrollY: how much you've actually scrolled down
+      // topOfNav: how much nav offset from top of page (fixed value)
       if(window.scrollY >= topOfNav) {
-        // below prevents jerky reflow
+        // below prevents jerky reflow (which was caused by position:fixed)
         document.body.style.paddingTop = nav.offsetHeight + 'px';
         document.body.classList.add('fixed-nav');
       } else {

@@ -6,8 +6,9 @@
 </head>
 <body>
   <h2>Cool</h2>
-  <!-- this is the white bg that will follow along -->
   <nav class="top">
+
+    <!-- white bg that will follow along -->
     <div class="dropdownBackground">
       <span class="arrow"></span>
     </div>
@@ -137,11 +138,11 @@
     display: block;
   }
 
+  /*seperate because you can't animate display:none to display:block*/
+  /*see below how 'trigger-enter-active' is on a setTimeout */
   .trigger-enter-active .dropdown {
     opacity: 1;
   }
-
-
 
   .dropdownBackground {
     width:100px;
