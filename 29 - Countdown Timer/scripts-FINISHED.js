@@ -42,6 +42,7 @@ function displayEndTime(timestamp) {
 }
 
 function startTimer() {
+  // note use of 'dataset' to grab value off of data-attribute
   const seconds = parseInt(this.dataset.time);
   timer(seconds);
 }
